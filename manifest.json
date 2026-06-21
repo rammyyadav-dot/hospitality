@@ -1,0 +1,16 @@
+{
+  "name": "JobReady Hospitality",
+  "short_name": "JobReady",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#003BFF",
+  "description": "Hospitality outsourcing services for hotels, OTAs, DMCs and travel brands.",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

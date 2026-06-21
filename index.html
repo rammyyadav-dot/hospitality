@@ -60,6 +60,7 @@ radial-gradient(ellipse 45% 45% at 15% 80%,rgba(34,211,238,.14),transparent 65%)
 linear-gradient(90deg,rgba(6,11,24,.95),rgba(6,11,24,.70),rgba(6,11,24,.90));z-index:1}
 .hero:after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:58px 58px;z-index:1}
 .hero-bg{position:absolute;inset:0;width:100%;height:110%;object-fit:cover;opacity:.20;filter:saturate(.9)}
+
 .hero-wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center;padding:90px 22px}
 .eyebrow{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(59,130,246,.35);background:rgba(29,78,216,.14);color:#bfdbfe;border-radius:999px;padding:8px 13px;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.16em;margin-bottom:22px}
 .pulse{width:7px;height:7px;background:#22c55e;border-radius:50%;box-shadow:0 0 0 6px rgba(34,197,94,.15)}
@@ -127,7 +128,7 @@ h1{font-family:'Outfit',sans-serif;font-size:clamp(46px,7vw,88px);line-height:.9
 }
 @media(max-width:640px){
   .hero-wrap{padding-top:60px}
-  .hero-card img{height:230px}
+  .hero-card img,.hero-card-slider{height:230px}
   .grid-3,.grid-4,.process,.footer-grid,.gallery{grid-template-columns:1fr}
   .gallery img,.gallery img:first-child{height:240px;grid-row:auto}
   .metric-grid{grid-template-columns:1fr 1fr}
@@ -182,6 +183,12 @@ a,button,.btn,.card,.lux-slide,.lux-thumb{cursor:none}
 .hover-reveal{position:relative;overflow:hidden}
 .hover-reveal .hidden-caption{position:absolute;inset:auto 12px 12px 12px;background:rgba(6,11,24,.78);color:#fff;border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:12px;font-size:12px;font-weight:800;line-height:1.45;transform:translateY(18px);opacity:0;transition:.3s;backdrop-filter:blur(12px)}
 .hover-reveal:hover .hidden-caption{transform:translateY(0);opacity:1}
+.seo-block{margin-top:26px;background:#fff;border:1px solid var(--border);border-radius:26px;padding:24px;display:grid;grid-template-columns:300px 1fr;gap:20px;align-items:start;box-shadow:0 18px 50px rgba(15,23,42,.05)}
+.seo-block h3{font-family:'Outfit',sans-serif;font-size:24px;letter-spacing:-.03em;color:#07101f}
+.seo-block p{color:#64748b;line-height:1.65;font-size:14px;margin-top:6px}
+.seo-tags{display:flex;flex-wrap:wrap;gap:10px}
+.seo-tags span{border:1px solid #dbeafe;background:#eff6ff;color:#1e3a8a;border-radius:999px;padding:9px 12px;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;transition:.25s}
+.seo-tags span:hover{background:var(--blue);color:#fff;transform:translateY(-2px)}
 
 /* Sticky scrollytelling section */
 .story-section{background:#061024;color:#fff;position:relative;overflow:visible}
@@ -201,6 +208,34 @@ a,button,.btn,.card,.lux-slide,.lux-thumb{cursor:none}
 .story-step p{color:#cbd5e1;font-size:16px;line-height:1.75;max-width:610px}
 @media(max-width:980px){body{cursor:auto}.cursor-dot,.cursor-ring{display:none}.sticky-cta{right:16px;bottom:86px}.lux-head,.seo-block,.story-grid{grid-template-columns:1fr}.story-sticky{position:relative;top:auto}.lux-thumbs{grid-template-columns:repeat(2,1fr)}.lux-carousel,.lux-track,.lux-slide{height:500px;min-height:500px}.lux-copy{left:24px;right:24px}.lux-actions{right:18px;bottom:18px}}
 @media(max-width:640px){.lux-carousel,.lux-track,.lux-slide{height:430px;min-height:430px}.lux-copy h3{font-size:32px}.lux-copy p{font-size:13px}.lux-thumbs{grid-template-columns:1fr}.seo-block{padding:18px}.story-step h3{font-size:32px}.story-sticky{min-height:420px}}
+
+
+/* Premium HD Hero Hospitality Carousel */
+.hero-bg-slider{position:absolute;inset:0;z-index:0;overflow:hidden}
+.hero-bg-slide{position:absolute;inset:0;width:100%;height:115%;object-fit:cover;opacity:0;filter:saturate(1.05) contrast(1.08);transform:scale(1.08);transition:opacity 1.25s ease,transform 7.5s ease}
+.hero-bg-slide.active{opacity:.28;transform:scale(1)}
+.hero-bg-slider:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,11,24,.94),rgba(6,11,24,.66),rgba(6,11,24,.86));z-index:1}
+.hero-card-slider{position:relative;border-radius:20px;height:310px;width:100%;overflow:hidden;background:#0b1530}
+.hero-card-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:20px;opacity:0;transform:scale(1.06);transition:opacity .9s ease,transform 6s ease}
+.hero-card-slide.active{opacity:1;transform:scale(1)}
+.hero-card-slider:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(6,11,24,.25))}
+.hero-mini-dots{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);z-index:3;display:flex;gap:7px}
+.hero-mini-dot{width:7px;height:7px;border-radius:999px;background:rgba(255,255,255,.45);transition:.25s}
+.hero-mini-dot.active{width:22px;background:#fff}
+
+
+.role-cloud-light span{
+  background:#fff;
+  border:1px solid var(--border);
+  color:#0f172a;
+  box-shadow:0 10px 24px rgba(15,23,42,.05);
+}
+.role-cloud-light span:hover{
+  background:var(--blue);
+  color:#fff;
+  border-color:var(--blue);
+  transform:translateY(-2px);
+}
 
 </style>
 
@@ -238,33 +273,54 @@ a,button,.btn,.card,.lux-slide,.lux-thumb{cursor:none}
 
 <nav class="nav">
   <div class="container nav-inner">
-    <a href="#home" class="logo">JOBREADY <span>GLOBAL</span></a>
+    <a href="index.html" class="logo">JOBREADY <span>GLOBAL</span></a>
     <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#employers">For Employers</a>
-      <a href="#candidates">For Candidates</a>
-      <a href="#training">Training</a>
-      <a href="#process">Process</a>
-      <a href="#contact">Contact</a>
+      <a href="index.html">Home</a>
+      <a href="leadership-team.html">Leadership</a>
+      <a href="employers.html">Employers</a>
+      <a href="candidates.html">Candidates</a>
+      <a href="training-internship.html">Training</a>
+      <a href="jobs-careers.html">Jobs</a>
+      <a href="countries-we-serve.html">Countries</a>
+      <a href="success-stories-case-studies.html">Stories</a>
+      <a href="contact.html">Contact</a>
     </div>
-    <a href="#contact" class="btn btn-primary" style="padding:10px 16px;font-size:11px">Hire Talent</a>
+    <a href="contact.html" class="btn btn-primary" style="padding:10px 16px;font-size:11px">Hire Talent</a>
   </div>
 </nav>
 
 <header class="hero" id="home">
-  <img class="hero-bg" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=2200&q=90" alt="Luxury hospitality professionals and chef recruitment">
+  <div class="hero-bg-slider" aria-hidden="true">
+    <img class="hero-bg-slide active" src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=2600&q=95" alt="Luxury resort and hotel hospitality recruitment">
+    <img class="hero-bg-slide" src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?auto=format&fit=crop&w=2600&q=95" alt="Hotel front office professionals and guest relations team">
+    <img class="hero-bg-slide" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=2600&q=95" alt="Fine dining restaurant hospitality professionals">
+    <img class="hero-bg-slide" src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=2600&q=95" alt="Executive chef and culinary recruitment for luxury hotels">
+    <img class="hero-bg-slide" src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=2600&q=95" alt="Waiter and food and beverage service professionals">
+    <img class="hero-bg-slide" src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=2600&q=95" alt="Housekeeping and hotel operations professionals">
+  </div>
   <div class="container hero-wrap">
     <div>
-      <div class="eyebrow"><span class="pulse"></span> Global Hospitality Recruitment Specialist</div>
-      <h1>World-Class Hospitality Talent. Ready To Deploy.</h1>
-      <p class="hero-lead">JobReady Global Hospitality Recruitment Company connects <strong>top chefs, waiters, housekeeping teams, front office specialists, tourism professionals and contractual workforce teams</strong> with luxury hotels, resorts, restaurants, airlines and travel brands in India and abroad.</p>
+      <div class="eyebrow"><span class="pulse"></span> Global Hospitality Recruitment Company</div>
+      <h1>
+WORLD-CLASS<br>
+HOSPITALITY<br>
+TALENT. <span style="color:#FEBA02;">READY<br>TO DEPLOY.</span>
+</h1>
+      <p class="hero-lead">We curate and deploy the <strong>top 1% of culinary, service, and leadership talent</strong> for the world's most prestigious brands. Secure exceptional permanent or agile project-based professionals to elevate your guest experience.</p>
       <div class="hero-cta">
         <a href="#employers" class="btn btn-primary">Partner With Us <i class="fa-solid fa-arrow-right"></i></a>
         <a href="#candidates" class="btn btn-ghost">Explore Jobs</a>
       </div>
     </div>
     <div class="hero-card">
-      <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=1200&q=90" alt="HD chef image for chef recruitment agency and luxury hotel culinary staffing">
+      <div class="hero-card-slider" aria-label="Luxury hospitality professionals carousel">
+        <img class="hero-card-slide active" src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1400&q=95" alt="Luxury hotel and resort staffing">
+        <img class="hero-card-slide" src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?auto=format&fit=crop&w=1400&q=95" alt="Front office hospitality professional">
+        <img class="hero-card-slide" src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=1400&q=95" alt="Executive chef hospitality recruitment">
+        <img class="hero-card-slide" src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=1400&q=95" alt="Waiter and F&B service professional">
+        <img class="hero-card-slide" src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1400&q=95" alt="Housekeeping hotel operations professional">
+      </div>
+</div>
       <div class="metric-grid">
         <div class="metric"><b>4</b><span>Service Pillars</span></div>
         <div class="metric"><b>360°</b><span>Hiring Support</span></div>
@@ -281,6 +337,48 @@ a,button,.btn,.card,.lux-slide,.lux-thumb{cursor:none}
     <span><i>●</i> Executive Chefs</span><span><i>●</i> Hotel Operations</span><span><i>●</i> Restaurant Staff</span><span><i>●</i> Tourism Internships</span><span><i>●</i> Contractual Labour</span><span><i>●</i> Airlines & Cruise</span><span><i>●</i> Catering & Facility Management</span>
   </div>
 </div>
+
+
+<section class="section section-alt" id="hospitality-designations">
+  <div class="container">
+    <div class="sec-label">Hospitality Designations We Recruit</div>
+    <h2 class="section-title">Compact Role Coverage Across Every Hotel Department.</h2>
+    <p class="section-copy">From hotel leadership and front office to culinary, housekeeping, F&amp;B, engineering, finance, security and IT, JobReady Global builds focused talent pipelines for operationally critical roles.</p>
+    <div class="role-cloud role-cloud-light" style="margin-top:30px">
+        <span>General Manager</span>
+        <span>Front Office Manager</span>
+        <span>Receptionist</span>
+        <span>Concierge</span>
+        <span>Bellhop</span>
+        <span>Night Auditor</span>
+        <span>Executive Housekeeper</span>
+        <span>Floor Supervisor</span>
+        <span>Room Attendant</span>
+        <span>Laundry Attendant</span>
+        <span>Food & Beverage Director</span>
+        <span>Restaurant Manager</span>
+        <span>Server</span>
+        <span>Bartender</span>
+        <span>Room Service Attendant</span>
+        <span>Banquet Captain</span>
+        <span>Executive Chef</span>
+        <span>Sous Chef</span>
+        <span>Line Cook</span>
+        <span>Pastry Chef</span>
+        <span>Kitchen Steward</span>
+        <span>Director of Sales</span>
+        <span>Marketing Manager</span>
+        <span>Revenue Manager</span>
+        <span>Events Coordinator</span>
+        <span>Wedding Coordinator</span>
+        <span>Chief Engineer</span>
+        <span>Human Resources Manager</span>
+        <span>Financial Controller</span>
+        <span>Security Director</span>
+        <span>IT Manager</span>
+    </div>
+  </div>
+</section>
 
 <section class="section" id="about">
   <div class="container grid-2">
@@ -402,7 +500,7 @@ a,button,.btn,.card,.lux-slide,.lux-thumb{cursor:none}
     <div class="sec-label">Recruitment Engine</div>
     <h2 class="section-title">A Clean, Compliant, Trackable Hiring Process.</h2>
     <div class="process">
-      <div class="step"><b>01</b><h3>Requirement Mapping</h3><p>We define job roles, skills, experience, salary range, location and deployment timeline.</p></div>
+      <div class="step"><b>01</b><h3>Workforce Planning</h3><p>We define job roles, skills, experience, salary range, location and deployment timeline.</p></div>
       <div class="step"><b>02</b><h3>Talent Sourcing</h3><p>We activate job portals, referrals, campuses, hospitality communities and verified networks.</p></div>
       <div class="step"><b>03</b><h3>Screening</h3><p>Profiles are checked for technical fit, communication, attitude and documentation readiness.</p></div>
       <div class="step"><b>04</b><h3>Interview & Offer</h3><p>We coordinate interviews, feedback, salary discussion, offer alignment and joining confirmation.</p></div>
@@ -430,13 +528,13 @@ a,button,.btn,.card,.lux-slide,.lux-thumb{cursor:none}
     <div class="lux-head">
       <div>
         <div class="sec-label">Luxury Hospitality Workforce</div>
-        <h2 class="section-title">Premium Roles. Premium Presentation.</h2>
-        <p class="section-copy">A decluttered visual carousel for high-conversion hospitality recruitment: chefs, waiters, housekeeping, front office teams and luxury resort professionals.</p>
+        <h2 class="section-title">Hospitality Talent Across Every Department</h2>
+        <p class="section-copy">Specialized recruitment solutions for luxury hotels, resorts, restaurants, catering companies, airlines and tourism businesses.</p>
       </div>
       <div class="lux-note hover-reveal">
-        <b>360° Talent View</b>
-        <span>Hover, scroll and interact — the website now feels like a premium hospitality hiring journey.</span>
-        <div class="hidden-caption">Built for employers, candidates and AI search discoverability.</div>
+        <b>Global Hospitality Talent Network</b>
+        <span>Chefs, hotel operations, housekeeping, front office, F&B and resort professionals sourced for leading hospitality brands worldwide.</span>
+        <div class="hidden-caption">Trusted recruitment support for permanent hiring, contractual staffing and workforce expansion.</div>
       </div>
     </div>
 
@@ -486,12 +584,12 @@ a,button,.btn,.card,.lux-slide,.lux-thumb{cursor:none}
       <img class="story-img active" src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=1400&q=90" alt="Hospitality requirement mapping">
       <img class="story-img" src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1400&q=90" alt="Recruitment screening and evaluation">
       <img class="story-img" src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1400&q=90" alt="Hospitality deployment and onboarding">
-      <div class="story-float"><b id="storyCount">01</b><span id="storyLabel">Requirement Mapping</span></div>
+      <div class="story-float"><b id="storyCount">01</b><span id="storyLabel">Workforce Planning</span></div>
     </div>
     <div class="story-steps">
-      <div class="story-step active" data-story="0" data-count="01" data-label="Requirement Mapping"><small>Scrollytelling Step</small><h3>Define the Workforce Need</h3><p>As the user scrolls, the story begins with role mapping: department, skill level, salary range, location, contract type and joining timeline.</p></div>
-      <div class="story-step" data-story="1" data-count="02" data-label="Screening & Evaluation"><small>Interactive Journey</small><h3>Screen, Evaluate & Shortlist</h3><p>Recruitment content unfolds dynamically, showing how JobReady filters candidates through technical fit, service attitude and documentation readiness.</p></div>
-      <div class="story-step" data-story="2" data-count="03" data-label="Onboarding & Deployment"><small>Sticky Visual Layer</small><h3>Deploy Job-Ready Talent</h3><p>The sticky image remains in place while the hiring story moves forward, creating a premium, cinematic website experience.</p></div>
+      <div class="story-step active" data-story="0" data-count="01" data-label="Workforce Planning"><small>Recruitment Stage</small><h3>Workforce Planning</h3><p>We assess manpower requirements, department structure, staffing levels, qualifications and deployment timelines to build an effective recruitment strategy.</p></div>
+      <div class="story-step" data-story="1" data-count="02" data-label="Candidate Assessment"><small>Selection Stage</small><h3>Candidate Screening & Selection</h3><p>Every candidate undergoes technical evaluation, hospitality competency assessment, background verification and communication screening before shortlisting.</p></div>
+      <div class="story-step" data-story="2" data-count="03" data-label="Talent Mobilization"><small>Deployment Stage</small><h3>Mobilization & Onboarding</h3><p>Selected candidates are supported through documentation, onboarding, deployment and transition into the workplace.</p></div>
     </div>
   </div>
 </section>
@@ -515,7 +613,7 @@ a,button,.btn,.card,.lux-slide,.lux-thumb{cursor:none}
       <h2>Ready To Build Your Hospitality Workforce?</h2>
       <p>Tell us whether you need top chefs, hotel manpower, contractual staff, training partnerships or internship-ready talent. Our team will map the right recruitment plan for you.</p>
     </div>
-    <form class="form" action="mailto:Hello@jobreadybpo.com" method="post" enctype="text/plain">
+    <form class="form" id="hospitalityLeadForm" method="POST">
       <input type="text" name="name" placeholder="Full Name / Company" required>
       <input type="email" name="email" placeholder="Email Address" required>
       <input type="tel" name="phone" placeholder="Phone / WhatsApp">
@@ -526,7 +624,7 @@ a,button,.btn,.card,.lux-slide,.lux-thumb{cursor:none}
         <option>Contractual Labour Requirement</option>
       </select>
       <textarea name="message" placeholder="Write your requirement"></textarea>
-      <button class="btn btn-primary" style="width:100%;border:0;cursor:pointer">Submit Enquiry</button>
+      <button type="submit" class="btn btn-primary" style="width:100%;border:0;cursor:pointer">Submit Enquiry</button>
     </form>
   </div>
 </section>
@@ -535,22 +633,22 @@ a,button,.btn,.card,.lux-slide,.lux-thumb{cursor:none}
   <div class="container footer-grid">
     <div>
       <h3>JOBREADY GLOBAL</h3>
-      <p style="margin-top:12px">Global Hospitality Recruitment Specialist. Empowering Hospitality. Connecting The World.</p>
+      <p style="margin-top:12px">Global Hospitality Recruitment Company for hotels, resorts, restaurants, airlines, catering and facility management operators.</p>
       <p style="margin-top:12px">Powered by <strong>Jobready Business Outsourcing Company</strong></p>
     </div>
     <div>
-      <h4>Quick Links</h4>
-      <p><a href="#employers">For Employers</a></p>
-      <p><a href="#candidates">For Candidates</a></p>
-      <p><a href="#training">Training & Internships</a></p>
-      <p><a href="#contact">Contact Us</a></p>
+      <h4>Company</h4>
+      <p><a href="index.html">Home</a></p>
+      <p><a href="leadership-team.html">Leadership Team</a></p>
+      <p><a href="countries-we-serve.html">Countries We Serve</a></p>
+      <p><a href="success-stories-case-studies.html">Success Stories</a></p>
     </div>
     <div>
-      <h4>Services</h4>
-      <p>Hospitality Recruitment</p>
-      <p>Contractual Labour</p>
-      <p>Talent Acquisition</p>
-      <p>Training Programs</p>
+      <h4>Solutions</h4>
+      <p><a href="employers.html">For Employers</a></p>
+      <p><a href="candidates.html">For Candidates</a></p>
+      <p><a href="training-internship.html">Training & Internships</a></p>
+      <p><a href="jobs-careers.html">Jobs & Careers</a></p>
     </div>
     <div>
       <h4>Contact</h4>
@@ -569,9 +667,34 @@ a,button,.btn,.card,.lux-slide,.lux-thumb{cursor:none}
 
 
 <script>
-/* Hero parallax */
-const heroBg = document.querySelector('.hero-bg');
-window.addEventListener('scroll',()=>{ if(heroBg){ heroBg.style.transform = 'translateY('+(window.scrollY*.24)+'px) scale(1.04)'; }});
+/* Premium HD hero carousel + parallax */
+const heroBgSlides=[...document.querySelectorAll('.hero-bg-slide')];
+const heroCardSlides=[...document.querySelectorAll('.hero-card-slide')];
+let heroIndex=0;
+const heroCardSlider=document.querySelector('.hero-card-slider');
+if(heroCardSlider && !document.querySelector('.hero-mini-dots')){
+  const dots=document.createElement('div');
+  dots.className='hero-mini-dots';
+  heroCardSlides.forEach((_,i)=>{
+    const dot=document.createElement('span');
+    dot.className='hero-mini-dot'+(i===0?' active':'');
+    dots.appendChild(dot);
+  });
+  heroCardSlider.appendChild(dots);
+}
+const heroDots=[...document.querySelectorAll('.hero-mini-dot')];
+function setHeroSlide(i){
+  if(!heroBgSlides.length) return;
+  heroIndex=(i+heroBgSlides.length)%heroBgSlides.length;
+  heroBgSlides.forEach((s,n)=>s.classList.toggle('active',n===heroIndex));
+  heroCardSlides.forEach((s,n)=>s.classList.toggle('active',n===heroIndex % heroCardSlides.length));
+  heroDots.forEach((d,n)=>d.classList.toggle('active',n===heroIndex % heroCardSlides.length));
+}
+setInterval(()=>setHeroSlide(heroIndex+1),4600);
+window.addEventListener('scroll',()=>{
+  const y=window.scrollY*.16;
+  heroBgSlides.forEach(slide=>{slide.style.transform=`translateY(${y}px) scale(1.06)`});
+});
 
 /* Custom cursor */
 const cursorDot=document.getElementById('cursorDot');
@@ -614,6 +737,13 @@ const storyCount=document.getElementById('storyCount');
 const storyLabel=document.getElementById('storyLabel');
 const storyObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){const step=entry.target;const id=Number(step.dataset.story);storySteps.forEach(s=>s.classList.remove('active'));step.classList.add('active');storyImgs.forEach((img,n)=>img.classList.toggle('active',n===id));if(storyCount)storyCount.textContent=step.dataset.count;if(storyLabel)storyLabel.textContent=step.dataset.label;}})},{rootMargin:'-35% 0px -45% 0px',threshold:0});
 storySteps.forEach(step=>storyObserver.observe(step));
+
+/* Lead form placeholder — ready for CRM integration */
+document.getElementById('hospitalityLeadForm')?.addEventListener('submit', function(e) {
+  e.preventDefault();
+  alert('Thank you! Your recruitment enquiry has been received. Our team will contact you shortly.');
+});
+
 </script>
 
 </body>
